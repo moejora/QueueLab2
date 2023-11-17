@@ -23,7 +23,7 @@ class SupermarketSimulation {
         this.arrivalRate = arrivalRate;
         this.maxItems = maxItems;
         this.maxSimTime = maxSimTime;
-
+//two express counters
         this.superexpress = new CheckoutCounter();
         this.express = new CheckoutCounter[2];
         this.express[0] = new CheckoutCounter();
@@ -86,13 +86,13 @@ class SupermarketSimulation {
     }
 
     private void assignCustomerToCounter(CheckoutCounter counter1, CheckoutCounter counter2, Customer customer) {
-        // Assign to the counter with the shorter line
-        if (counter1.line.size() <= counter2.line.size()) {
-            counter1.addCustomer(customer, currentTime);
-        } else {
-            counter2.addCustomer(customer, currentTime);
-        }
+    // Assign to the counter with the shorter line
+    if (counter1.line.size() <= counter2.line.size()) {
+        counter1.addCustomer(customer, currentTime);
+    } else {
+        counter2.addCustomer(customer, currentTime);
     }
+}
 
     private int findShortestStandardLine() {
         int shortestLineIndex = 0;
